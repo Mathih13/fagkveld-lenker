@@ -4,22 +4,25 @@ import logo from './logo.svg';
 import './App.css';
 
 export default class LinkComponent extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Card>
         <Card.Content>
           <Card.Header>
-            Linkname
+              {this.props.title}
           </Card.Header>
           <Card.Meta>
           </Card.Meta>
           <Card.Description>
-            Matthew is a musician living in Nashville.
+              {this.props.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
-            <Icon name='link' />
+          <a href={this.props.url} target="_blank">
             Klikk her
           </a>
         </Card.Content>
